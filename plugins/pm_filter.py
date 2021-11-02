@@ -536,7 +536,7 @@ async def auto_filter(client, message):
             else:
     
 
-        buttons = [[
+
                  InlineKeyboardButton("Instructions 📑",callback_data="instructions")
                  ]]
         reply_markup = InlineKeyboardMarkup(buttons)
