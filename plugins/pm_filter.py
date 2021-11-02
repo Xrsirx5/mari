@@ -534,24 +534,21 @@ async def auto_filter(client, message):
                     )
 
             else:
-            Reply_markup=await client.send_message(
-            chat_id = message.chat.id,
-            text=f"""
-Couldn't Find Movie.
-Please Check the spelling in google.😊 "
-            parse_mode="html",
-            reply_to_message_id=message.message_id,
-            reply_markup=InlineKeyboardMarkup(
-                    [
-                        [
-                            InlineKeyboardButton("📢 Google 📢", url="www.google.com/")
-                        ]
-                    ]
-                )
-            )    
-            return
-        if not btn:
-            return
+        pass # return if no files found for that query
+    
+
+    if len(results) == 0 : # double check
+        buttons = [[
+                 InlineKeyboardButton("Instructions 📑",callback_data="instructions")
+                 ]]
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await bot.send_message(
+        chat_id=update.chat.id,
+        text=f"<b>Sorry I couldn't find anything for <code>{the_query}</code> 🤧\nTry Reading the instructions below</b> 👇🏽",
+        reply_markup=reply_markup,
+        parse_mode="html",
+        reply_to_message_id=update.message_id)
+        return
          
         if not btn:
             return
