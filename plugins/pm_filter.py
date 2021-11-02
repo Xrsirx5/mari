@@ -531,7 +531,9 @@ async def auto_filter(client, message):
                 file_id = file.file_id
                 btn.append(
                     [InlineKeyboardButton(text=f"{file.file_name}", callback_data=f'files#{file_id}'), InlineKeyboardButton(text=f"{get_size(file.file_size)}", callback_data=f'files_#{file_id}')]
-                    )else:
+                    )
+
+            else:
             LuciferMoringstar=await client.send_message(
             chat_id = message.chat.id,
             text=f"""
@@ -547,6 +549,9 @@ Please Check the spelling in google.😊 """,
                     ]
                 )
             )    
+            return
+        if not btn:
+            return
          
         if not btn:
             return
