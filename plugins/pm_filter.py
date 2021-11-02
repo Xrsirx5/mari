@@ -536,7 +536,6 @@ async def auto_filter(client, message):
             else:
     
 
-    if len(results) == 0 : # double check
         buttons = [[
                  InlineKeyboardButton("Instructions 📑",callback_data="instructions")
                  ]]
