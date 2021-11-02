@@ -534,7 +534,6 @@ async def auto_filter(client, message):
                     )
 
             else:
-        pass # return if no files found for that query
     
 
     if len(results) == 0 : # double check
