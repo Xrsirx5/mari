@@ -536,9 +536,8 @@ async def auto_filter(client, message):
             else:
     
 
-
                  InlineKeyboardButton("Instructions 📑",callback_data="instructions")
-                 ]]
+                 ]
         reply_markup = InlineKeyboardMarkup(buttons)
         await bot.send_message(
         chat_id=update.chat.id,
